@@ -38,11 +38,12 @@
                 android:textSize="17sp" />
 
             <Button
-                android:id="@+id/boton_foto"
+                android:id="@+id/foto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:onClick="onClick"
                 android:text="Foto" />
 
             <EditText
@@ -209,7 +210,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/boton_cancelar"
+                    android:id="@+id/cancelar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -217,7 +218,7 @@
                     android:text="Cancelar" />
 
                 <Button
-                    android:id="@+id/boton_continuar"
+                    android:id="@+id/continuar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
