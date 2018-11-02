@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1048848608789-2janh6apnsnevce7r5el9nr45ajt3oiu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nick.petgo",
+            "certificate_hash": "5eaadb1e555e2e4b2b6b5cd6fc2d8c2fa4fdf7f7"
+          }
+        },
+        {
           "client_id": "1048848608789-r1kgsjki2sm7guchonpc7lf6d57fepvp.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048848608789-r1kgsjki2sm7guchonpc7lf6d57fepvp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
