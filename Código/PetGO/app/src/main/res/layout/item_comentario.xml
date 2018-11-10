@@ -6,7 +6,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="317dp"
+        android:layout_height="96dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -19,41 +19,24 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/info"
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="74dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textStyle="bold|italic"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/back"
-                android:layout_width="match_parent"
-                android:layout_height="9dp"
-                android:layout_above="@+id/user"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:background="#c8259096"
                 android:gravity="center"
-                android:text=" "
+                android:text="TextView"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/foto"
-                android:layout_width="match_parent"
-                android:layout_height="197dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/user"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_alignBottom="@+id/foto"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/date"
                 android:background="#c8259096"
                 android:gravity="center"
                 android:text="TextView"
@@ -62,15 +45,14 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/desc"
+                android:id="@+id/info"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="55dp"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
                 android:text="TextView"
+                android:textAlignment="center"
                 android:textSize="14sp" />
 
         </RelativeLayout>

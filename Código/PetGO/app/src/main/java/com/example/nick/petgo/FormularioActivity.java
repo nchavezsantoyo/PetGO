@@ -11,21 +11,18 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class FormularioActivity extends AppCompatActivity implements View.OnClickListener {
@@ -43,11 +40,12 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
     private TextView view_fecha;
     private DatabaseReference Mascotas;
     private StorageReference Almacen;
+    private FirebaseAuth firebase;
     private static final int galeria = 1;
     private ProgressDialog cargando;
     private String fecha = "";
     private String id_mascota = "";
-    private String url = "ola";
+    private String url = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +71,7 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
         Almacen = FirebaseStorage.getInstance().getReference();
         cargando = new ProgressDialog(this);
         cargando.setCancelable(false);
+        firebase = FirebaseAuth.getInstance();
     }
 
     private void fecha(){
@@ -85,12 +84,10 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
             }
         }, calendario.get(Calendar.YEAR), calendario.get(Calendar.MONTH), calendario.get(Calendar.DAY_OF_MONTH));
         datepicker.show();
-
     }
 
     private void continuar(){
-
-        String id_usuario = "1";
+        String id_usuario = firebase.getCurrentUser().getEmail();
         String categoria = "Extraviado";
         String especie = "";
         String sexo = "";
@@ -139,16 +136,15 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1 && resultCode == RESULT_OK){
+            Uri uri = data.getData();
             cargando.setMessage("Cargando imagen...");
             cargando.show();
-            Uri uri = data.getData();
             id_mascota = Mascotas.push().getKey();
             final StorageReference direccion = Almacen.child("Mascotas").child(id_mascota);
             direccion.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     cargando.dismiss();
-                    // obtener direccion de imagen
                     direccion.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {

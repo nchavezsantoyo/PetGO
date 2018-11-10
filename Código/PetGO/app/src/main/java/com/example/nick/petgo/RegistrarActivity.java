@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrarActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText TextEmail;
@@ -25,6 +27,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
     private Button btnRegistrar;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference Usuarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +37,20 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
         firebaseAuth = FirebaseAuth.getInstance();
         TextEmail = (EditText) findViewById(R.id.correo);
         TextPassword = (EditText) findViewById(R.id.contrasena);
-        TextName = (EditText) findViewById(R.id.nombre);
+        TextName = (EditText) findViewById(R.id.user);
         TextLastname = (EditText) findViewById(R.id.apellido);
         btnRegistrar = (Button) findViewById(R.id.registrar);
         progressDialog = new ProgressDialog(this);
         btnRegistrar.setOnClickListener(this);
+        Usuarios = FirebaseDatabase.getInstance().getReference("Usuarios");
     }
 
     private void registrar(){
         final String email = TextEmail.getText().toString().trim();
-        String password  = TextPassword.getText().toString().trim();
-        String name = TextName.getText().toString().trim();
-        String lastname  = TextLastname.getText().toString().trim();
+        final String password  = TextPassword.getText().toString().trim();
+        final String name = TextName.getText().toString().trim();
+        final String lastname  = TextLastname.getText().toString().trim();
+        final String id_usuario = Usuarios.push().getKey();
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Se debe ingresar un email",Toast.LENGTH_LONG).show();
@@ -72,6 +77,8 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            Usuario usuarios = new Usuario(id_usuario, name, lastname, email, password);
+                            Usuarios.child(id_usuario).setValue(usuarios);
                             Toast.makeText(RegistrarActivity.this,"Se ha registrado el usuario con el email: "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
                         }
                         else{

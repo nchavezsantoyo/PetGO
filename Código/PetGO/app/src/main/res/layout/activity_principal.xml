@@ -10,23 +10,78 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recicler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#f9f9f9" />
 
     <Button
         android:id="@+id/nuevo"
-        android:layout_width="53dp"
-        android:layout_height="54dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="1"
-        android:background="@drawable/button_border"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/linear_shadow"
         android:text="+"
         android:textColor="#ffffff"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#caffffff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:padding="10dp"
+            app:srcCompat="@drawable/cat" />
+
+        <ImageButton
+            android:id="@+id/lost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:padding="10dp"
+            app:srcCompat="@drawable/bone" />
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/principal_icon"
+            android:padding="10dp"
+            app:srcCompat="@drawable/home1" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:padding="10dp"
+            app:srcCompat="@drawable/track" />
+
+        <ImageButton
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/user" />
+    </LinearLayout>
 
 </RelativeLayout>
