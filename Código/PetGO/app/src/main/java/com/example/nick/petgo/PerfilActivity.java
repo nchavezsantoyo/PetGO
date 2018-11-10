@@ -18,7 +18,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         txtUser =(TextView)findViewById(R.id.TextUser);
         String user = getIntent().getStringExtra("names");
         txtUser.setText("¡Bienvenido "+ user +"!");
-}
+    }
 
     @Override
     public void onClick(View view) {

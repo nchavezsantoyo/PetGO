@@ -3,6 +3,8 @@ package com.example.nick.petgo;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,12 +12,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,7 +35,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
     private Button boton_nuevo;
     private DatabaseReference Mascotas;
     private RecyclerView recicler;
-    private AdaptadorPrincipal adaptador;
+    private Adaptador adaptador;
     private ArrayList<Mascota> extraviadas = new ArrayList<>();
     private NotificationCompat.Builder notificacion;
     private int noti = 0;
@@ -50,17 +61,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
                     extraviadas.add(M);
                 }
                 Collections.reverse(extraviadas);
-                adaptador = new AdaptadorPrincipal(extraviadas);
-                adaptador.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent int1 = new Intent(getApplicationContext(), PublicacionActivity.class);
-                        int1.putExtra(PublicacionActivity.descripcion, extraviadas.get(recicler.getChildAdapterPosition(v)).getDescripcion());
-                        int1.putExtra(PublicacionActivity.foto, extraviadas.get(recicler.getChildAdapterPosition(v)).getFoto());
-                        int1.putExtra(PublicacionActivity.id, extraviadas.get(recicler.getChildAdapterPosition(v)).getId_mascota());
-                        startActivity(int1);
-                    }
-                });
+                adaptador = new Adaptador(extraviadas);
                 recicler.setAdapter(adaptador);
 
                 if(!extraviadas.isEmpty()) {

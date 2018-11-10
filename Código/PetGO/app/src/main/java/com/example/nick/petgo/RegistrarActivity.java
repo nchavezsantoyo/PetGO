@@ -37,7 +37,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
         firebaseAuth = FirebaseAuth.getInstance();
         TextEmail = (EditText) findViewById(R.id.correo);
         TextPassword = (EditText) findViewById(R.id.contrasena);
-        TextName = (EditText) findViewById(R.id.user);
+        TextName = (EditText) findViewById(R.id.nombre);
         TextLastname = (EditText) findViewById(R.id.apellido);
         btnRegistrar = (Button) findViewById(R.id.registrar);
         progressDialog = new ProgressDialog(this);

@@ -28,7 +28,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.VistaHolder>{
     @Override
     public void onBindViewHolder(VistaHolder vistaHolder, int i) {
         vistaHolder.desc.setText(extraviadas.get(i).getDescripcion());
-        vistaHolder.id.setText(extraviadas.get(i).getId_mascota());
+        vistaHolder.date.setText("Encontrado el " + extraviadas.get(i).getFecha());
+        vistaHolder.info.setText(extraviadas.get(i).getEspecie().toUpperCase() + " " + extraviadas.get(i).getSexo().toUpperCase() + " "
+                + extraviadas.get(i).getTamano().toUpperCase());
         Glide.with(vistaHolder.imagen.getContext()).load(extraviadas.get(i).getFoto()).into(vistaHolder.imagen);
     }
 
@@ -38,13 +40,14 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.VistaHolder>{
     }
 
     public class VistaHolder extends RecyclerView.ViewHolder {
-        private TextView desc, id;
+        private TextView desc, date, info;
         private ImageView imagen;
 
         public VistaHolder(View itemView) {
             super(itemView);
             desc = (TextView) itemView.findViewById(R.id.desc);
-            id = (TextView) itemView.findViewById(R.id.id);
+            date = (TextView) itemView.findViewById(R.id.date);
+            info = (TextView) itemView.findViewById(R.id.info);
             imagen = (ImageView) itemView.findViewById(R.id.imagen);
         }
 
