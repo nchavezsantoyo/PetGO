@@ -11,28 +11,25 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class AdaptadorPrincipal extends RecyclerView.Adapter<AdaptadorPrincipal.VistaHolder> implements View.OnClickListener{
+public class AdaptadorMascota extends RecyclerView.Adapter<AdaptadorMascota.VistaHolder> implements View.OnClickListener{
 
     ArrayList<Mascota> extraviadas;
     private View.OnClickListener listener;
 
-    public AdaptadorPrincipal(ArrayList<Mascota> extraviadas) {
+    public AdaptadorMascota(ArrayList<Mascota> extraviadas) {
         this.extraviadas = extraviadas;
     }
 
     @Override
     public VistaHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vista, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_mascota, viewGroup, false);
         view.setOnClickListener(this);
         return new VistaHolder(view);
     }
 
     @Override
     public void onBindViewHolder(VistaHolder vistaHolder, int i) {
-        vistaHolder.desc.setText(extraviadas.get(i).getDescripcion());
         vistaHolder.date.setText(extraviadas.get(i).getCategoria() + " el " + extraviadas.get(i).getFecha());
-        vistaHolder.info.setText(extraviadas.get(i).getEspecie().toUpperCase() + " " + extraviadas.get(i).getSexo().toUpperCase() + " "
-                + extraviadas.get(i).getTamano().toUpperCase());
         Glide.with(vistaHolder.imagen.getContext()).load(extraviadas.get(i).getFoto()).into(vistaHolder.imagen);
     }
 
@@ -52,17 +49,14 @@ public class AdaptadorPrincipal extends RecyclerView.Adapter<AdaptadorPrincipal.
     }
 
     public class VistaHolder extends RecyclerView.ViewHolder {
-        private TextView desc, date, info;
+        private TextView date;
         private ImageView imagen;
 
         public VistaHolder(View itemView) {
             super(itemView);
-            desc = (TextView) itemView.findViewById(R.id.desc);
             date = (TextView) itemView.findViewById(R.id.date);
-            info = (TextView) itemView.findViewById(R.id.info);
             imagen = (ImageView) itemView.findViewById(R.id.foto);
         }
-
     }
 
 }

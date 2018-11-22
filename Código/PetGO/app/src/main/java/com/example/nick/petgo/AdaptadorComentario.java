@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class AdaptadorComentario extends RecyclerView.Adapter<AdaptadorComentari
     public void onBindViewHolder(VistaHolder vistaHolder, int i) {
         vistaHolder.date.setText(comentarios.get(i).getFecha());
         vistaHolder.info.setText(comentarios.get(i).getContenido());
-        vistaHolder.user.setText(comentarios.get(i).getContenido());
+        vistaHolder.user.setText(comentarios.get(i).getId_usario());
     }
 
     @Override

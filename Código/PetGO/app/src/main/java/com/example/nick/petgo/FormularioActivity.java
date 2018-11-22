@@ -84,7 +84,6 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
             }
         }, calendario.get(Calendar.YEAR), calendario.get(Calendar.MONTH), calendario.get(Calendar.DAY_OF_MONTH));
         datepicker.show();
-
     }
 
     private void continuar(){

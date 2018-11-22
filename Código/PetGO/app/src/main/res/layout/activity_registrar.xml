@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/user"
+        android:id="@+id/date"
         android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -58,7 +58,7 @@
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="#FF565656"
-        app:layout_constraintBottom_toBottomOf="@+id/user"
+        app:layout_constraintBottom_toBottomOf="@+id/date"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
@@ -98,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user" />
+        app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <EditText
         android:id="@+id/contrasena"

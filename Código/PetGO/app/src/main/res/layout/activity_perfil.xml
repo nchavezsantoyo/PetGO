@@ -14,11 +14,12 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/found"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00ffffff"
+            android:onClick="onClick"
             android:padding="10dp"
             app:srcCompat="@drawable/cat" />
 
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00ffffff"
+            android:onClick="onClick"
             android:padding="10dp"
             app:srcCompat="@drawable/bone" />
 
@@ -42,7 +44,7 @@
             app:srcCompat="@drawable/home" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/pets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

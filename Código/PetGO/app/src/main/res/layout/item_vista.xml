@@ -33,7 +33,7 @@
                 android:id="@+id/back"
                 android:layout_width="match_parent"
                 android:layout_height="9dp"
-                android:layout_above="@+id/user"
+                android:layout_above="@+id/date"
                 android:background="#c8259096"
                 android:gravity="center"
                 android:text=" "
@@ -50,7 +50,7 @@
                 android:scaleType="centerCrop" />
 
             <TextView
-                android:id="@+id/user"
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_alignBottom="@+id/foto"

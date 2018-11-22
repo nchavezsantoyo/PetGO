@@ -24,7 +24,10 @@
         <activity android:name=".PrincipalActivity" />
         <activity android:name=".RegistrarActivity" />
         <activity android:name=".PerfilActivity" />
-        <activity android:name=".PublicacionActivity"></activity>
+        <activity android:name=".PublicacionActivity" />
+        <activity android:name=".ExtraviadosActivity" />
+        <activity android:name=".EcontradosActivity" />
+        <activity android:name=".EncontradosActivity"></activity>
     </application>
 
 </manifest>
