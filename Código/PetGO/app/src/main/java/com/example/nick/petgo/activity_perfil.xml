@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recicler"
+        android:layout_height="286dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="53dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#caffffff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/cat" />
+
+        <ImageButton
+            android:id="@+id/lost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/bone" />
+
+        <ImageButton
+            android:id="@+id/principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/pets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:padding="10dp"
+            app:srcCompat="@drawable/track" />
+
+        <ImageButton
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/principal_icon"
+            android:padding="10dp"
+            app:srcCompat="@drawable/user1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</RelativeLayout>
