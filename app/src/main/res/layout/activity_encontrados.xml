@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EncontradosActivity">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recicler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#f9f9f9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#caffffff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/principal_icon"
+            android:padding="10dp"
+            app:srcCompat="@drawable/cat1" />
+
+        <ImageButton
+            android:id="@+id/lost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/bone" />
+
+        <ImageButton
+            android:id="@+id/principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/pets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/track" />
+
+        <ImageButton
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:onClick="onClick"
+            android:padding="10dp"
+            app:srcCompat="@drawable/user" />
+    </LinearLayout>
+
+</RelativeLayout>

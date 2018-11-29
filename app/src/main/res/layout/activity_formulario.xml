@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".FormularioActivity">
+
+    <ScrollView
+        android:id="@+id/formulario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/mensaje_extravio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="20dp"
+                android:text="¿Encontraste un animal extraviado?"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_border"
+                android:ems="10"
+                android:hint="Agrega una descripción"
+                android:inputType="textPersonName"
+                android:padding="20dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_border"
+                android:ems="10"
+                android:hint="¿En qué dia se perdió?"
+                android:onClick="onClick"
+                android:padding="20dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/foto"
+                android:layout_width="52dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/button_border"
+                android:drawableBottom="@drawable/camara"
+                android:onClick="onClick"
+                android:paddingBottom="8dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/mensaje_especie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="30dp"
+                android:text="ESPECIE"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/especie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/perro"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Perro"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/gato"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Gato"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/mensaje_sexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:text="SEXO"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/sexo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/macho"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Macho"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/hembra"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Hembra"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/mensaje_tamano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:text="TAMAÑO"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/tamaño"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/pequeno"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Pequeño"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/mediano"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Mediano"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/grande"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_border"
+                    android:text="Grande"
+                    android:textColor="#259096"
+                    android:textColorLink="#259096" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_weight="1" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/style_1"
+                    android:onClick="onClick"
+                    android:text="Cancelar"
+                    android:textColor="#259096" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/continuar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/style_1"
+                    android:onClick="onClick"
+                    android:text="Continuar"
+                    android:textColor="#259096" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
